@@ -91,6 +91,8 @@ def setup_package():
             "twisted",
             "urllib3",
             "simple_salesforce",
+            "gensim",
+            "boto3"
         ],
         entry_points={
             "console_scripts": [
