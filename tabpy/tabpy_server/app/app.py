@@ -256,8 +256,9 @@ class TabPyApp:
                 "using default settings."
             )
 
-        logger.info("ConfigParameters:")
-        logger.info(ConfigParameters)
+        logger.info(f"ConfigParameters.TABPY_EVALUATE_TIMEOUT: f{ConfigParameters.TABPY_EVALUATE_TIMEOUT}")
+        logger.info(f"ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB: f{ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB}")
+
         settings_parameters = [
             (SettingsParameters.Port, ConfigParameters.TABPY_PORT, 9004, None),
             (SettingsParameters.ServerVersion, None, __version__, None),
