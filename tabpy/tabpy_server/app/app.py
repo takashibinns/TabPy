@@ -256,8 +256,8 @@ class TabPyApp:
                 "using default settings."
             )
 
-    logger.info("ConfigParameters:")
-    logger.info(ConfigParameters)
+        logger.info("ConfigParameters:")
+        logger.info(ConfigParameters)
         settings_parameters = [
             (SettingsParameters.Port, ConfigParameters.TABPY_PORT, 9004, None),
             (SettingsParameters.ServerVersion, None, __version__, None),
