@@ -237,8 +237,6 @@ class TabPyApp:
         self.credentials = {}
 
         pkg_path = os.path.dirname(tabpy.__file__)
-        logger.info(f"Env Variables: ")
-        logger.info(os.environ)
 
         parser = configparser.ConfigParser(os.environ)
         logger.info(f"Parsing config file {config_file}")
@@ -258,6 +256,8 @@ class TabPyApp:
                 "using default settings."
             )
 
+    logger.info("ConfigParameters:")
+    logger.info(ConfigParameters)
         settings_parameters = [
             (SettingsParameters.Port, ConfigParameters.TABPY_PORT, 9004, None),
             (SettingsParameters.ServerVersion, None, __version__, None),
