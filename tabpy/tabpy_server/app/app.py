@@ -181,7 +181,6 @@ class TabPyApp:
 
     def _set_parameter(self, parser, settings_key, config_key, default_val, parse_function):
         key_is_set = False
-
         if (
             config_key is not None
             and parser.has_section("TabPy")
@@ -191,7 +190,7 @@ class TabPyApp:
                 parse_function = parser.get
             self.settings[settings_key] = parse_function("TabPy", config_key)
             key_is_set = True
-            logger.debug(
+            logger.info(
                 f"Parameter {settings_key} set to "
                 f'"{self.settings[settings_key]}" '
                 "from config file or environment variable"
@@ -258,6 +257,9 @@ class TabPyApp:
 
         logger.info(f"ConfigParameters.TABPY_EVALUATE_TIMEOUT: {ConfigParameters.TABPY_EVALUATE_TIMEOUT}")
         logger.info(f"ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB: {ConfigParameters.TABPY_PORT}")
+        logger.info(f"SettingsParameters.TABPY_EVALUATE_TIMEOUT: {SettingsParameters.TABPY_EVALUATE_TIMEOUT}")
+        logger.info(f"SettingsParameters.TABPY_MAX_REQUEST_SIZE_MB: {SettingsParameters.TABPY_PORT}")
+
 
         settings_parameters = [
             (SettingsParameters.Port, ConfigParameters.TABPY_PORT, 9004, None),
@@ -284,6 +286,7 @@ class TabPyApp:
 
         for setting, parameter, default_val, parse_function in settings_parameters:
             self._set_parameter(parser, setting, parameter, default_val, parse_function)
+
 
         if not os.path.exists(self.settings[SettingsParameters.UploadDir]):
             os.makedirs(self.settings[SettingsParameters.UploadDir])
