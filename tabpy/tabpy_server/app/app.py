@@ -256,8 +256,8 @@ class TabPyApp:
                 "using default settings."
             )
 
-        logger.info(f"ConfigParameters.TABPY_EVALUATE_TIMEOUT: f{ConfigParameters.TABPY_EVALUATE_TIMEOUT}")
-        logger.info(f"ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB: f{ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB}")
+        logger.info(f"ConfigParameters.TABPY_EVALUATE_TIMEOUT: {ConfigParameters.TABPY_EVALUATE_TIMEOUT}")
+        logger.info(f"ConfigParameters.TABPY_MAX_REQUEST_SIZE_MB: {ConfigParameters.TABPY_PORT}")
 
         settings_parameters = [
             (SettingsParameters.Port, ConfigParameters.TABPY_PORT, 9004, None),
