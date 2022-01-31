@@ -199,14 +199,14 @@ class TabPyApp:
         if not key_is_set and default_val is not None:
             self.settings[settings_key] = default_val
             key_is_set = True
-            logger.debug(
+            logger.info(
                 f"Parameter {settings_key} set to "
                 f'"{self.settings[settings_key]}" '
                 "from default value"
             )
 
         if not key_is_set:
-            logger.debug(f"Parameter {settings_key} is not set")
+            logger.info(f"Parameter {settings_key} is not set")
 
     def _parse_config(self, config_file):
         """Provide consistent mechanism for pulling in configuration.
